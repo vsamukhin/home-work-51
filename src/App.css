@@ -1,0 +1,8 @@
+.number{
+    width: 25px;
+    padding: 25px;
+    border-radius: 50%;
+    background-color: #7082ff;
+    text-align: center;
+    color: #fff;
+}
