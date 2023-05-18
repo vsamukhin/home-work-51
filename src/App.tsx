@@ -8,7 +8,7 @@ const App = () => {
     const getRandomNumbers = (min:number,max:number) => {
         let num:number[] = [];
         while (num.length !== 5){
-            const number:number = Math.floor(min + Math.random() * (max - min));
+            const number:number =Math.floor(Math.random() * (max - min + 1)) + min;
             if (!num.includes(number)){
                 num.push(number);
             }
@@ -24,10 +24,12 @@ const App = () => {
     return(
         <div className="App">
             <div className="container">
-                {numbers.map((number:number)=> (
-                    <Circle key={number} num={number}/>
-                ))}
-                <button onClick={changeNumbers}  type="button">New numbers</button>
+                <button onClick={changeNumbers}  type="button" className="btn">New numbers</button>
+                <div className="block-number">
+                    {numbers.map((number:number)=> (
+                        <Circle key={number} num={number}/>
+                    ))}
+                </div>
             </div>
         </div>
     );
